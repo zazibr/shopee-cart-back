@@ -26,15 +26,6 @@ async function deleteItem(userCart, name) {
     return userCart;
 }
 
-async function removeItem(userCart, index) {
-    if (index >= 0 && index < userCart.length) {
-        userCart.splice(index, 1);
-        console.log(`Item at index ${index} removed from cart.`);
-    } else {
-        console.log(`Invalid index: ${index}. No item removed.`);
-    }
-    return userCart;
-}
 
 async function removeItem(userCart, item) {
     // transforma o indice visual do usuário para o backend
