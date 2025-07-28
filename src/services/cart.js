@@ -28,13 +28,19 @@ async function deleteItem(userCart, name) {
 
 
 async function removeItem(userCart, item) {
-    // transforma o indice visual do usuário para o backend
-    const index = item - 1;
-    if (index !== -1) {
-        userCart.splice(index, 1);
-        console.log(`Item ${item.name} removed from cart.`);
-    } else {
-        console.log(`Item ${item.name} not found in cart.`);
+    // encontrar o indice do item
+    const indexFound = userCart.findIndex(cartItem => cartItem.name === item.name);
+    if (indexFound == -1) {
+        console.log(`\nItem não encontrado.\n`);
+        return;
+    } else {       
+        if (userCart[indexFound].quantity > 1) {
+            userCart[indexFound].quantity--;
+        } else {
+            if (userCart[indexFound].quantity === 1) {
+            userCart.splice(indexFound, 1);      
+            }  
+        }
     }
     return userCart;
 }

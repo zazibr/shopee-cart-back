@@ -15,7 +15,8 @@ await cartService.addItem(myCart, item2);
 
 await cartService.displaycart(myCart);
 
-await cartService.removeItem(myCart, 1);
+await cartService.removeItem(myCart, item2);
+await cartService.removeItem(myCart, item2);
 
 
 await cartService.displaycart(myCart);
