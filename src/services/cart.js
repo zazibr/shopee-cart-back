@@ -42,7 +42,7 @@ async function removeItem(userCart, item) {
             }  
         }
     }
-    return userCart;
+    return ;
 }
 
 async function calculateTotal(userCart) {
